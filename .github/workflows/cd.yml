@@ -1,13 +1,9 @@
 name: Deploy Fake
 on:
   workflow_call:
-    secrets:
-      environment:
-        description: 'Environment to deploy to'
-        required: true
 jobs:
   deploy-kubernetes:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy in the environment
-        run: echo "Deploying to the environment ${{ secrets.environment }}"
+        run: echo "Deploying to the environment ${{ secrets.ENVIRONMENT_DEPLOY }}"

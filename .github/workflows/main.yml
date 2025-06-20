@@ -14,5 +14,4 @@ jobs:
   CD:
     needs: [ CI ]
     uses: victormilk/workflow-reuse/.github/workflows/cd.yml@main
-    secrets:
-      environment: ${{ secrets.ENVIRONMENT_DEPLOY }}
+    secrets: inherit
