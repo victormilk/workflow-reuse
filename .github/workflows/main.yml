@@ -1,4 +1,4 @@
-name: CI Fake
+name: CI/CD Fake
 on:
   workflow_dispatch:
 jobs:
