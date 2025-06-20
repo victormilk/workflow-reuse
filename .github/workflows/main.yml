@@ -1,0 +1,13 @@
+name: CI Fake
+on:
+  workflow_dispatch:
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Docker Image
+        run: echo "Execution of docker build command"
+      - name: Run Software Tests
+        run: echo "Execution of software tests"
+      - name: Publish Release
+        run: echo "Execution of release publishing"
