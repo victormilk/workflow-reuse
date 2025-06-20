@@ -1,6 +1,16 @@
 name: CI/CD Fake
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'development'
+        type: choice
+        options:
+          - development
+          - staging
+          - production
 jobs:
   CI:
     runs-on: ubuntu-latest
@@ -13,5 +23,6 @@ jobs:
         run: echo "Execution of release publishing"
   CD:
     needs: [ CI ]
-    uses: victormilk/workflow-reuse/.github/workflows/cd.yml@main
-    secrets: inherit
+    uses: victormilk/repository-deploy/.github/workflows/deploy.yml@main
+    with:
+      environment: ${{ inputs.environment }}
