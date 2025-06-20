@@ -11,3 +11,6 @@ jobs:
         run: echo "Execution of software tests"
       - name: Publish Release
         run: echo "Execution of release publishing"
+  CD:
+    needs: [ CI ]
+    uses: victormilk/workflow-reuse/.github/workflows/cd.yml@main
