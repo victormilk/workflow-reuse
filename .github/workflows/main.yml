@@ -14,3 +14,5 @@ jobs:
   CD:
     needs: [ CI ]
     uses: victormilk/workflow-reuse/.github/workflows/cd.yml@main
+    with:
+      environment: production
